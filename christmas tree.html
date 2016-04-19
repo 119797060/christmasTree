@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>打印圣诞树</title>
+<script type="text/javascript">
+/*打印圣诞树*/
+//接收输入树冠的高度
+var upHeight=prompt("请输入树冠高度");
+//判断数字是否合法
+if(!isNaN(upHeight)&&upHeight>0){
+	//如果合法,接收输入树干高度
+	var downHeight=prompt("请输入树干高度");
+	//判断是否合法
+	if(!isNaN(downHeight)&&downHeight>0){
+		//如果合法,开始打印,第一层循环打印层数
+		for(var i=0;i<upHeight;i++){
+			//打印空格的二层循环
+			for(var j=upHeight;j>i;j--){
+				document.write("&nbsp;");
+				}
+				//打印*的二层循环
+				for(var k=0;k<i*2+1;k++){
+					document.write("*");
+					}
+					//换行
+					document.write("<br/>");
+			}
+			//第一层循环打印树干高度
+			for(var a=0;a<downHeight;a++){
+				//打印空格的二层循环
+				for(var b=0;b<upHeight;b++){
+					document.write("&nbsp;");
+					}
+					//打印*和换行
+					document.write("*<br/>");
+				}
+		}else{
+			document.write("请输入正确的大于0的数字!");
+			}
+	}else{
+		document.write("请输入正确的大于0的数字!");
+		}
+</script>
+</head>
+
+<body>
+</body>
+</html>
